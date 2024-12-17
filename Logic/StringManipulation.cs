@@ -47,13 +47,6 @@ namespace Logic
             return themes;
         }
 
-
-
-
-
-
-
-
         public static string[] ParseString(string input)
         {
             try
@@ -69,11 +62,6 @@ namespace Logic
                 return Array.Empty<string>();
             }
         }
-
-
-
-
-
 
         public static string[] StrFromFiles(string filePath)
         {
@@ -93,23 +81,6 @@ namespace Logic
                 return Array.Empty<string>();
             }
         }
-
-
-
-
-        //public string ShowObjects(string[] s)
-        //{
-        //    ThemesOfTheWorks themes = new ThemesOfTheWorks();
-        //    if (typeof(ThemesOfTheWorks).Name == themes.GetType().Name)
-        //    {
-        //        return themes.MakeThemesOfWorks(s);
-        //    }
-
-        //}
-        
-
-
-
 
         public static string ToStringDependingOnType(object work)
         {
@@ -145,15 +116,6 @@ namespace Logic
             return themesOfTheWorks;
         }
 
-        //public string ThemesOfTheWorksToString(ThemesOfTheWorks t)
-        //{
-        //    return $"--{t.Type}-- \nИмя студента: {t.StudentsName}, Название темы: {t.TopicName}, Дата выдачи: {t.DateOfIssue:yyyy.MM.dd}\n";
-        //}
-
-
-
-
-
         public static WorksWithAMentor MakeWorksWithAMentor(string[] s)
         {
             WorksWithAMentor worksWithAMentor = new WorksWithAMentor
@@ -167,14 +129,6 @@ namespace Logic
 
             return worksWithAMentor;
         }
-        //public string WorksWithAMentorToString(WorksWithAMentor m)
-        //{
-        //    return $"--{m.Type}-- \nИмя студента: {m.StudentsName}, Название темы: {m.TopicName}, Дата выдачи: {m.DateOfIssue:yyyy.MM.dd}, Имя наставника: {m.MentorsName}\n";
-        //}
-
-
-
-
 
         public static StatusOfWorks MakeStatusOfWorks(string[] s)
         {
@@ -189,10 +143,38 @@ namespace Logic
 
             return statusOfWorks;
         }
-        //public string StatusOfWorksToString(StatusOfWorks s)
-        //{
-        //    return $"--{s.Type}-- \nИмя студента: {s.StudentsName}, Название темы: {s.TopicName}, Дата выдачи: {s.DateOfIssue:yyyy.MM.dd}, Статус работы: {s.Status}\n";
-        //}
+
+
+        public static int GetMaxZeroSequenceLength(string binaryString)
+        {
+            int maxLength = 0;
+            int currentLength = 0;
+
+            foreach (char c in binaryString)
+            {
+                if (c == '0')
+                {
+                    currentLength++;
+
+                    if (currentLength > maxLength)
+                    {
+                        maxLength = currentLength;
+                    }
+                }
+                else
+                {
+
+                    currentLength = 0;
+                }
+            }
+
+            if (currentLength > maxLength)
+            {
+                maxLength = currentLength;
+            }
+
+            return maxLength;
+        }
 
     }
 }

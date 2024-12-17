@@ -17,37 +17,8 @@ namespace UnitTests
     [TestClass]
     public class UnitTest1
     {
+        
 
-        static int GetMaxZeroSequenceLength(string binaryString)
-        {
-            int maxLength = 0;
-            int currentLength = 0;
-
-            foreach (char c in binaryString)
-            {
-                if (c == '0') 
-                {
-                    currentLength++;
-
-                    if (currentLength > maxLength)
-                    {
-                        maxLength = currentLength;
-                    }
-                }
-                else
-                {
-                    
-                    currentLength = 0;
-                }
-            }
-
-            if (currentLength > maxLength)
-            {
-                maxLength = currentLength;
-            }
-
-            return maxLength;
-        }
 
 
 
@@ -59,7 +30,7 @@ namespace UnitTests
             int expectedResult = 6;
 
             // Act
-            int actualResult = GetMaxZeroSequenceLength(input);
+            int actualResult = StringManipulation.GetMaxZeroSequenceLength(input);
 
             // Assert
             Assert.AreEqual(expectedResult, actualResult);
@@ -73,7 +44,7 @@ namespace UnitTests
             int expectedResult = 0;
 
             // Act
-            int actualResult = GetMaxZeroSequenceLength(input);
+            int actualResult = StringManipulation.GetMaxZeroSequenceLength(input);
 
             // Assert
             Assert.AreEqual(expectedResult, actualResult);
@@ -87,7 +58,7 @@ namespace UnitTests
             int expectedResult = 4;
 
             // Act
-            int actualResult = GetMaxZeroSequenceLength(input);
+            int actualResult = StringManipulation.GetMaxZeroSequenceLength(input);
 
             // Assert
             Assert.AreEqual(expectedResult, actualResult);
@@ -101,7 +72,7 @@ namespace UnitTests
             int expectedResult = 1;
 
             // Act
-            int actualResult = GetMaxZeroSequenceLength(input.Replace("_", "")); // Удаляем символы подчеркивания
+            int actualResult = StringManipulation.GetMaxZeroSequenceLength(input.Replace("_", "")); // Удаляем символы подчеркивания
 
             // Assert
             Assert.AreEqual(expectedResult, actualResult);
@@ -115,7 +86,7 @@ namespace UnitTests
             int expectedResult = 0;
 
             // Act
-            int actualResult = GetMaxZeroSequenceLength(input);
+            int actualResult = StringManipulation.GetMaxZeroSequenceLength(input);
 
             // Assert
             Assert.AreEqual(expectedResult, actualResult);
