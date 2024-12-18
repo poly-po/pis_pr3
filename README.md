@@ -6,6 +6,7 @@
 
 ### 2. Для оценки покрытия кода тестами использовался NCrunch: 
 Сайт для скачивания [NCrunch](https://www.ncrunch.net/)
+
 ![NCrunch Metrics](https://github.com/user-attachments/assets/f32a5a65-3e2c-4e67-848c-6e7eff15ae22)
 
 ### 3. Для оценки использования ЦП использован встроенный профилировщик производительности 
